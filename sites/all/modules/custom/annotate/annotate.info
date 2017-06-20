@@ -4,4 +4,5 @@ core = 7.x
 files[] = annotate.module
 files[] = annotate.install
 files[] = annotate.admin.inc
+package = Pro Drupal Development
 configure=admin/config/annotate/settings
