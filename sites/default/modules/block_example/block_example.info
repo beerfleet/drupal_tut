@@ -1,0 +1,7 @@
+name = Block_Example
+description = This is an exaple exercise on blocks
+package = Drupal 7 Development
+core = 7.x
+files[] = block_example.module
+;dependencies[] = 
+;configure = 
