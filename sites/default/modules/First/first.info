@@ -1,0 +1,10 @@
+name = First
+description = A first module (not THE first)
+package = Drupal 7 Development
+core = 7.x
+files[] = first.module
+files[] = first.test
+
+; configure = 
+; php = 5.2
+; dependencies[] = autoload

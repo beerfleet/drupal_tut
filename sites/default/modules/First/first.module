@@ -1,0 +1,49 @@
+<?php
+
+/**
+ * @file
+ * A module exemplifying Drupal coding standards and APIs
+ * 
+ * This module blabla ...
+ */
+
+/**
+ * Implements hook_help().
+ */
+function first_help($path, $arg) {  
+  if ($path == 'admin/help#first') {
+    return t('A demo module.');
+  }
+}
+
+/**
+ * Implements hook_block_info
+ */
+function first_block_info() {
+  $blocks = [];
+  
+  $blocks['list_modules'] = [
+    'info' => t('A listing of all of the enalbed modules.'),
+    'cache' => DRUPAL_NO_CACHE,
+  ];
+  
+  return $blocks;
+}
+
+/**
+ * Implements hook_block_view().
+ */
+function first_block_view($block_name = '') {
+  if ($block_name == 'list_modules') {
+    $list = module_list();
+    
+    $theme_args = ['items' => $list, 'type' => 'ol'];
+    $content = theme('item_list', $theme_args);
+    
+    $block = [
+      'subject' => t('Enabled Moduleleles.'),
+      'content' => $content
+    ];
+    return $block;
+  }
+}
