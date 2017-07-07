@@ -1,0 +1,76 @@
+<?php
+  
+/**
+ * @file
+ * Provide a simulated beep
+ */
+function beep_beep() {
+  watchdog('beep', 'Beep!');  
+}
+  
+/**
+ * Impl of hook_action_info().
+ */
+function beep_action_info() {
+  return [
+    'beep_beep_action' => [
+      'type' => 'system',
+      'label' => t('Beep annoyingly.'),
+      'configurable' => FALSE,
+      'triggers' => ['any'],
+    //'triggers' => ['any'],
+    ],
+    'beep_multiple_beep_action' => [
+      'type' => 'system',
+      'label' => t('Beep multiple times'),
+      'configurable' => TRUE,
+      'triggers' => ['any'],
+    //'triggers' => ['node_insert'],
+    ],
+  ];
+}
+  
+function beep_multiple_beep_action_form($context) {
+  $form['beeps'] = [
+    '#type' => 'textfield',
+    '#title' => t('Number of beeps'),
+    '#description' => t('Enter number of beeps'),
+    '#default_value' => isset($context['beeps']) ? $context['beeps'] : '1',
+    '#required' => TRUE,
+  ];
+  return $form;
+}
+  
+function beep_multiple_beep_action_validate($form, $form_state) {
+  $beeps = $form_state['values']['beeps'];    
+    
+  if (!is_numeric($beeps)) {
+    form_set_error('beeps', t( 'Please integer here fill in master Yoda say.' ));
+  }
+  else if ((int) $beeps >= 10) {
+    form_set_error('beeps', t('Please choose fewer than 10 beeps !'));
+  }
+  else if ((int) $beeps < 0) {
+    form_set_error('beeps', t('This will trigger a chain reaction that will kill all kitties in the world.'));
+  }
+}
+  
+function beep_multiple_beep_action_submit($form, $form_state) {
+  return [
+    'beeps' => (int)$form_state['values']['beeps']
+  ];
+}
+  
+/**
+ * Simulate a beep. A Drupal action
+ */
+function beep_beep_action() {
+  beep_beep();
+}
+  
+function beep_multiple_beep_action($object, $context) {  
+  for ($i = 0; $i < $context['beeps']; $i++) {
+    beep_beep();
+  }
+    
+}
