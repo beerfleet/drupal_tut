@@ -31,7 +31,8 @@ class FirstTestCase extends DrupalWebTestCase {
   public function testBlockView() {
     $data = module_invoke('first', 'block_view', 'list_modules');
     $this->assertTrue(is_array($data), t('Bl0ck r3turnz r3nd3r@bl3 @rr@y'));
-    dsm('TETTETETTEET: ' . $data['subject']);
+    //dsm('TETTETETTEET: ' . $data['subject']);
+    watchdog('info', 'TETTETETTEET: ' . $data['subject']); 
     $this->assertEqual(t('Enabled Modules'), $data['subject'], t('Subj3ct 1s s3t'));
   }
 }
