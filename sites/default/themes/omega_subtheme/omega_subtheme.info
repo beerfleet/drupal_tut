@@ -1,0 +1,29 @@
+
+name = Omega Subtheme
+description = A powerful base theme framework.
+screenshot = screenshot.png
+engine = phptemplate
+core = 7.x
+base theme = omega
+
+; Regions
+regions[branding]       = Branding
+regions[header]         = Header
+regions[navigation]     = Navigation
+regions[highlighted]    = Highlighted
+regions[help]           = Help
+regions[content]        = Content
+regions[sidebar_first]  = First Sidebar
+regions[sidebar_second] = Second Sidebar
+regions[footer]         = Footer
+
+; Plugins
+plugins[panels][layouts] = panels/layouts
+plugins[panels][styles] = panels/styles
+
+; Information added by Drupal.org packaging script on 2015-07-21
+version = "7.x-4.4"
+core = "7.x"
+project = "omega"
+datestamp = "1437473042"
+
