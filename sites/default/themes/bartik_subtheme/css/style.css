@@ -566,6 +566,10 @@ h1#site-name {
 
 /* ----------------- Content ------------------ */
 
+.section .title {
+  color: #666;
+  font-style: italic;
+}
 .content {
   margin-top: 10px;
 }
@@ -1051,6 +1055,10 @@ div.messages {
 
 .breadcrumb {
   font-size: 0.929em;
+}
+
+.breadcrumb-title {
+  background-color: yellow;
 }
 
 /* -------------- User Profile   -------------- */
