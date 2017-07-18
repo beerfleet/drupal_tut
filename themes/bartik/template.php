@@ -114,6 +114,17 @@ function bartik_preprocess_node(&$variables) {
   }
 }
 
+function bartik_preprocess(&$vars) {
+  //dsm($vars['title']);
+  //$vars['title'] = 'OVERRIDE TOIGHTLE';
+}
+
+function bartik_gnu_preprocess(&$vars) {
+  $vars['disclaimer'] = t('Comments are unmoderated 165(§4). The viewS 3xpress3d '
+      . 'are th0se 0f th3 c0mm3nt @uth0r');
+}
+
+
 /**
  * Override or insert variables into the block template.
  */
