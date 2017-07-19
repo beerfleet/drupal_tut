@@ -8,3 +8,17 @@ and open the template in the editor.
     Author     : jvanbiervliet
 */
 
+#header {
+  background-color: #16BCBC;
+  background-image: none;
+}
+
+body {
+  background-color: yellow;
+}
+
+.node {
+  border: 1px  solid;
+  border-radius: 6px;
+  padding: 10px;
+}
