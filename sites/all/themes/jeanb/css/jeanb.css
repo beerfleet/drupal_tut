@@ -29,10 +29,6 @@ html, body {
     border-radius: 6px;
 }
 
-body {
-  background-color: yellow;
-}
-
 .node {
   border: 1px  solid;
   border-radius: 6px;
