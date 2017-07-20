@@ -5,7 +5,7 @@ base theme = bartik
 core = 7.x
 
 stylesheets[all][] = css/jeanb.css
-scripts[] = js/jeanb.js
+;scripts[] = js/jeanb.js
 
 regions[header] = Header
 regions[help] = Help

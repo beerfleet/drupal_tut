@@ -22,3 +22,7 @@ body {
   border-radius: 6px;
   padding: 10px;
 }
+
+.huge_h1 h1 {
+  font-size: 5em;
+}
