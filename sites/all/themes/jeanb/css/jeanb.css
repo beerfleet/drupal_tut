@@ -8,9 +8,25 @@ and open the template in the editor.
     Author     : jvanbiervliet
 */
 
+html, body {
+  border-radius: 6px;
+}
+
 #header {
   background-color: #16BCBC;
   background-image: none;
+}
+
+.menu-jeanb {
+  background-color: #EDF5FA;
+  border: 1px gold solid;
+  border-radius: 6px;
+}
+
+.sidebar .block {
+    background-color: #FCEBA9;
+    border-color: #690f0f;
+    border-radius: 6px;
 }
 
 body {
